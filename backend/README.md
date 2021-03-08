@@ -88,12 +88,11 @@ GET '/categories'
 '6' : "Sports"}
 
 ```
-Trivial API
-API
-GET \categories Fetches a dictionary of all available categories
-
-Request parameters: none
-Example response:
+GET `\categories` 
+Fetches a dictionary of all available categories
+- *Request parameters:* none 
+- *Example response:*  
+```
 {
   "categories": {
     "1": "Science", 
@@ -106,8 +105,9 @@ Example response:
   "success": true
 }
 
-GET \questions?page=<page_number>
-
+```
+GET `\questions?page=<page_number>` 
+```
 {
   "categories": [
     "Science",
@@ -193,26 +193,34 @@ GET \questions?page=<page_number>
   "success": true,
   "total_questions": 21
 }
-DELETE /questions/<question_id> Delete an existing questions from the repository of available questions
+```
 
-Request arguments: question_id:int
-Example response:
+DELETE `/questions/<question_id>`
+Delete an existing questions from the repository of available questions
+- *Request arguments:* question_id:int 
+- *Example response:* 
+```
 {
   "deleted": "15",
   "success": true
 }
-POST /questions Add a new question to the repository of available questions
+```
 
-Request body: {question:string, answer:string, difficulty:int, category:string}
-Example response:
+POST `/questions`
+Add a new question to the repository of available questions
+- *Request body:* {question:string, answer:string, difficulty:int, category:string}
+- *Example response:* 
+```
 {
   "created": 22, 
   "success": true
 }
-POST /questions/search Fetches all questions where a substring matches the search term (not case-sensitive)
-
-Request body: {searchTerm:string}
-Example response:
+```
+POST `/questions/search`
+Fetches all questions where a substring matches the search term (not case-sensitive)
+- *Request body:* {searchTerm:string}
+- *Example response:*
+```
 {
   "current_category": null, 
   "questions": [
@@ -227,10 +235,13 @@ Example response:
   "success": true, 
   "total_questions": 1
 }
-GET /categories/<int:category_id>/questions Fetches a dictionary of questions for the specified category
+```
 
-Request argument: category_id:int
-Example response:
+GET `/categories/<int:category_id>/questions`
+Fetches a dictionary of questions for the specified category
+- *Request argument:* category_id:int
+- *Example response:*
+```
 {
   "current_category": 2,
   "questions": [
@@ -266,10 +277,12 @@ Example response:
   "success": true,
   "total_questions": 4
 }
-POST /quizzes Fetches one random question within a specified category. Previously asked questions are not asked again.
-
-Request body: {previous_questions: arr, quiz_category: {id:int, type:string}}
-Example response:
+```
+POST `/quizzes`
+Fetches one random question within a specified category. Previously asked questions are not asked again. 
+- *Request body:* {previous_questions: arr, quiz_category: {id:int, type:string}}
+- *Example response*: 
+```
 {
   "question": {
     "answer": "George Washington Carver", 
@@ -280,6 +293,8 @@ Example response:
   }, 
   "success": true
 }
+```
+
 ## Testing
 To run the tests, run
 ```
