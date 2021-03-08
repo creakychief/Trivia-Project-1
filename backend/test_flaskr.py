@@ -47,7 +47,8 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         # self.assertEqual(data['success'], True)
         self.assertTrue(len(data['categories']))
-        self.assertEqual(res.status_code, 405) self.assertEqual(data['success'], False)
+        self.assertEqual(res.status_code, 405) 
+        self.assertEqual(data['success'], False)
 
 
     def test_get_all_questions(self):
@@ -59,7 +60,8 @@ class TriviaTestCase(unittest.TestCase):
         self.assertTrue(data['questions'])
         self.assertTrue(data['total_questions'])
         self.assertTrue(data['categories'])
-        self.assertEqual(res.status_code, 405) self.assertEqual(data['success'], False)
+        self.assertEqual(res.status_code, 405) 
+        self.assertEqual(data['success'], False)
         # self.assertTrue(data['current_categories'])
     
     def test_delete_questions(self):
